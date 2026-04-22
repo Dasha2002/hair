@@ -1,14 +1,13 @@
 <section class="consultation-section">
     <div class="consultation-wrapper">
         <div class="consultation-bg consultation-bg-left">
-            <img src="https://static.tildacdn.com/tild3833-3064-4136-a133-336532336636/AKZ_34241.png" alt="">
-        </div>
-        <div class="consultation-bg consultation-bg-right">
-            <img src="https://static.tildacdn.com/tild3966-3239-4634-b531-333832393530/AKZ_3441.png" alt="">
+            <img src="https://static.tildacdn.com/tild3833-3064-4136-a133-336532336636/AKZ_34241.png" alt="" loading="lazy">
         </div>
         <div class="consultation-bg consultation-bg-overlay">
-            <img src="https://static.tildacdn.com/tild6264-3032-4464-a331-303161633562/b59ebc21-c0f8-490b-9.png" alt="">
+            <img src="https://static.tildacdn.com/tild6264-3032-4464-a331-303161633562/b59ebc21-c0f8-490b-9.png" alt="" loading="lazy">
         </div>
+
+        <div class="consultation-bg-mobile"></div>
 
         <div class="consultation-form-bg"></div>
 
@@ -17,7 +16,7 @@
                 Консультация с врачом международного уровня по пересадке волос
             </h2>
             <p class="consultation-subtitle">
-                Оставьте заявку и наш специалист ответят на все интересующие вопросы
+                Оставьте заявку и наш специалист ответит на все интересующие вопросы
             </p>
 
             <form class="consultation-form" id="consultationForm">
@@ -33,6 +32,7 @@
                         placeholder="+7 (000) 000-00-00" 
                         required
                         autocomplete="tel"
+                        inputmode="tel"
                     >
                 </div>
                 <button type="submit" class="form-button">

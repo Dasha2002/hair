@@ -1,5 +1,5 @@
 <section id="steps" class="steps-section">
-    <div class="container">
+    <div class="container-steps">
         <h2 class="steps-title">Этапы процесса пересадки волос</h2>
         <div class="steps-container">
             <div class="step-item">

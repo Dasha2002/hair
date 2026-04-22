@@ -1,41 +1,76 @@
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1>Пересадка волос в России за 1 день<br>Лучшие специалисты-трансплантологи</h1>
-            <div class="hero-buttons">
-                <a href="#calculator" class="btn btn-gold">РАССЧИТАТЬ СТОИМОСТЬ</a>
-                <a href="#results" class="btn btn-outline">РЕЗУЛЬТАТЫ КЛИЕНТОВ</a>
-                <a class="yandex-link" href="https://yandex.by/maps/org/transhair_tour/21014167700/?ll=39.757575%2C43.569518&z=16" target="_blank" rel="noopener">
-                    <img class="yandex" src="https://static.tildacdn.com/tild3266-3539-4664-b435-323862323631/Frame_1812624561.svg" alt="Яндекс Карты">
-                </a>
-            </div>
+<section class="hero-consultation">
 
-            <div class="trust-badges">
-                <div class="trust-item">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CEA97A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16.476675 8.267525C16.808275 7.927525 17.36515 7.90915 17.72045 8.226475C18.07575 8.543825 18.09495 9.0767 17.763325 9.4167L11.603325 15.732475C11.2816 16.06235 10.745325 16.090925 10.387325 15.79725L7.307325 13.27095C6.938325 12.968275 6.895575 12.43665 7.211875 12.08355C7.52815 11.730425 8.0837 11.689525 8.4527 11.9922L10.89225 13.993175L16.476675 8.267525Z" fill="#453B2D" stroke="#453B2D" stroke-width="0.5"></path>
-                    </svg>
-                    <span>Приживаемость<br> волос 98%</span>
+    <div class="hero-bg hero-bg-main"></div>
+    <div class="hero-bg hero-bg-overlay"></div>
+    <div class="hero-bg hero-bg-decoration"></div>
+
+    <div class="fraud-warning fraud-warning-top">
+        <p>Участились случаи мошенничества</p>
+        <p>Наша клиника осуществляет запись только по телефону</p>
+        <p><strong>+7 918 108 87 78</strong></p>
+        <p>Приём ведётся по адресу</p>
+        <p>г. Сочи, ул. Коммунальная, 41Б</p>
+        <p>Если вам сообщают другие контакты или адреса, не передавайте личные данные</p>
+    </div>
+    
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">Пересадка волос в России за 1 день</h1>
+            <p class="hero-subtitle">Современные турецкие методики</p>
+            
+            <div class="hero-buttons">
+                <a href="#rec1053492266" class="btn btn-gold">РАССЧИТАТЬ СТОИМОСТЬ</a>
+                <a href="#rec1053177561" class="btn btn-outline">РЕЗУЛЬТАТЫ КЛИЕНТОВ</a>
+            </div>
+            
+            <div class="benefits-bar">
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="#E9A958"/>
+                            <path d="M16.48 8.27C16.81 7.93 17.37 7.91 17.72 8.23C18.08 8.54 18.1 9.08 17.76 9.42L11.6 15.73C11.28 16.06 10.75 16.09 10.39 15.8L7.31 13.27C6.94 12.97 6.9 12.44 7.21 12.08C7.53 11.73 8.08 11.69 8.45 11.99L10.89 13.99L16.48 8.27Z" fill="#453B2D" stroke="#453B2D" stroke-width="0.5"/>
+                        </svg>
+                    </span>
+                    <a href="#rec1064029506" class="benefit-text">Приживаемость волос 98%</a>
                 </div>
-                <div class="trust-item">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CEA97A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16.476675 8.267525C16.808275 7.927525 17.36515 7.90915 17.72045 8.226475C18.07575 8.543825 18.09495 9.0767 17.763325 9.4167L11.603325 15.732475C11.2816 16.06235 10.745325 16.090925 10.387325 15.79725L7.307325 13.27095C6.938325 12.968275 6.895575 12.43665 7.211875 12.08355C7.52815 11.730425 8.0837 11.689525 8.4527 11.9922L10.89225 13.993175L16.476675 8.267525Z" fill="#453B2D" stroke="#453B2D" stroke-width="0.5"></path>
-                    </svg>
-                    <span>Более 1 000 успешных<br> пересадок волос за 10 лет</span>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="#E9A958"/>
+                            <path d="M16.48 8.27C16.81 7.93 17.37 7.91 17.72 8.23C18.08 8.54 18.1 9.08 17.76 9.42L11.6 15.73C11.28 16.06 10.75 16.09 10.39 15.8L7.31 13.27C6.94 12.97 6.9 12.44 7.21 12.08C7.53 11.73 8.08 11.69 8.45 11.99L10.89 13.99L16.48 8.27Z" fill="#453B2D" stroke="#453B2D" stroke-width="0.5"/>
+                        </svg>
+                    </span>
+                    <span class="benefit-text">Более 1 000 успешных пересадок волос за 10 лет</span>
                 </div>
-                <div class="trust-item">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CEA97A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16.476675 8.267525C16.808275 7.927525 17.36515 7.90915 17.72045 8.226475C18.07575 8.543825 18.09495 9.0767 17.763325 9.4167L11.603325 15.732475C11.2816 16.06235 10.745325 16.090925 10.387325 15.79725L7.307325 13.27095C6.938325 12.968275 6.895575 12.43665 7.211875 12.08355C7.52815 11.730425 8.0837 11.689525 8.4527 11.9922L10.89225 13.993175L16.476675 8.267525Z" fill="#453B2D" stroke="#453B2D" stroke-width="0.5"></path>
-                    </svg>
-                    <span>Рассрочка на<br> услуги</span>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="#E9A958"/>
+                            <path d="M16.48 8.27C16.81 7.93 17.37 7.91 17.72 8.23C18.08 8.54 18.1 9.08 17.76 9.42L11.6 15.73C11.28 16.06 10.75 16.09 10.39 15.8L7.31 13.27C6.94 12.97 6.9 12.44 7.21 12.08C7.53 11.73 8.08 11.69 8.45 11.99L10.89 13.99L16.48 8.27Z" fill="#453B2D" stroke="#453B2D" stroke-width="0.5"/>
+                        </svg>
+                    </span>
+                    <span class="benefit-text">Рассрочка на услуги</span>
                 </div>
-                <div class="trust-item">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CEA97A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16.476675 8.267525C16.808275 7.927525 17.36515 7.90915 17.72045 8.226475C18.07575 8.543825 18.09495 9.0767 17.763325 9.4167L11.603325 15.732475C11.2816 16.06235 10.745325 16.090925 10.387325 15.79725L7.307325 13.27095C6.938325 12.968275 6.895575 12.43665 7.211875 12.08355C7.52815 11.730425 8.0837 11.689525 8.4527 11.9922L10.89225 13.993175L16.476675 8.267525Z" fill="#453B2D" stroke="#453B2D" stroke-width="0.5"></path>
-                    </svg>
-                    <span>Гарантия результата<br> прописана в договоре</span>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="#E9A958"/>
+                            <path d="M16.48 8.27C16.81 7.93 17.37 7.91 17.72 8.23C18.08 8.54 18.1 9.08 17.76 9.42L11.6 15.73C11.28 16.06 10.75 16.09 10.39 15.8L7.31 13.27C6.94 12.97 6.9 12.44 7.21 12.08C7.53 11.73 8.08 11.69 8.45 11.99L10.89 13.99L16.48 8.27Z" fill="#453B2D" stroke="#453B2D" stroke-width="0.5"/>
+                        </svg>
+                    </span>
+                    <span class="benefit-text">Гарантия результата прописана в договоре</span>
                 </div>
             </div>
         </div>
+        <a href="https://yandex.by/maps/org/transhair_tour/21014167700/" target="_blank" rel="noopener" class="yandex-map-btn">
+            <img src="https://static.tildacdn.com/tild3266-3539-4664-b435-323862323631/Frame_1812624561.svg" alt="Открыть на Яндекс.Картах">
+        </a>
+    </div>
+    
+    <div class="fraud-warning fraud-warning-bottom">
+        <p>ВНИМАНИЕ! УЧАСТИЛИСЬ СЛУЧАИ МОШЕННИЧЕСТВА. НАША КЛИНИКА ОСУЩЕСТВЛЯЕТ ЗАПИСЬ +7 (918) 108 87 78. ПРИЕМ ОСУЩЕСТВЛЯЕТСЯ ПО АДРЕСУ Г. СОЧИ, УЛ. КОММУНАЛЬНАЯ 41Б. ЕСЛИ ВАМ СООБЩАЮТ ДРУГИЕ КОНТАКТЫ ИЛИ АДРЕСА, НЕ ПЕРЕДАВАЙТЕ ЛИЧНЫЕ ДАННЫЕ</p>
     </div>
 </section>

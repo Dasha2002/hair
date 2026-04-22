@@ -201,12 +201,12 @@ document.addEventListener('DOMContentLoaded', function() {
 class PopupManager {
     constructor() {
         this.popup = document.getElementById('consultationPopup');
-        this.closeBtn = this.popup.querySelector('.popup-close');
+        this.closeBtn = this.popup?.querySelector('.popup-close');
         this.form = document.getElementById('popupForm');
         this.phoneInput = document.getElementById('popupPhone');
         this.nameInput = document.getElementById('popupName');
         
-        this.init();
+        if (this.popup) this.init();
     }
     
     init() {
@@ -217,14 +217,17 @@ class PopupManager {
             }
         });
 
-        this.closeBtn.addEventListener('click', () => this.close());
-        
+        this.closeBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.close();
+        });
+
         this.popup.addEventListener('click', (e) => {
             if (e.target === this.popup) {
                 this.close();
             }
         });
-        
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.popup.classList.contains('active')) {
                 this.close();
@@ -232,16 +235,19 @@ class PopupManager {
         });
 
         this.initPhoneMask();
-        
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        this.form?.addEventListener('submit', (e) => this.handleSubmit(e));
     }
     
     open() {
         this.popup.classList.add('active');
         document.body.classList.add('popup-open');
-        this.nameInput.focus();
-        this.form.reset();
-        this.form.classList.remove('success');
+        
+        setTimeout(() => {
+            this.nameInput?.focus();
+        }, 100);
+        
+        this.form?.reset();
+        this.form?.classList.remove('success');
     }
     
     close() {
@@ -250,6 +256,8 @@ class PopupManager {
     }
     
     initPhoneMask() {
+        if (!this.phoneInput) return;
+        
         const phoneInput = this.phoneInput;
         
         phoneInput.addEventListener('input', (e) => {
@@ -298,10 +306,9 @@ class PopupManager {
     async handleSubmit(e) {
         e.preventDefault();
         
-        const name = this.nameInput.value.trim();
-        const phone = this.phoneInput.value.trim();
+        const name = this.nameInput?.value.trim();
+        const phone = this.phoneInput?.value.trim();
         
-
         if (!name || !phone) {
             this.showError('Пожалуйста, заполните все поля');
             return;
@@ -312,11 +319,10 @@ class PopupManager {
             return;
         }
         
-
-        const submitBtn = this.form.querySelector('.popup-submit');
-        const originalText = submitBtn.textContent;
+        const submitBtn = this.form?.querySelector('.popup-submit');
+        if (!submitBtn) return;
         
-
+        const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Отправка...';
         submitBtn.disabled = true;
         
@@ -334,23 +340,6 @@ class PopupManager {
         }
     }
     
-    async sendFormData(name, phone) {
-
-        const response = await fetch('/api/consultation', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, phone }),
-        });
-        
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        
-        return response.json();
-    }
-    
     showSuccess() {
         const successHTML = `
             <div class="popup-success-message">
@@ -359,17 +348,18 @@ class PopupManager {
             </div>
         `;
         
-        this.form.outerHTML = successHTML;
+        if (this.form) {
+            this.form.outerHTML = successHTML;
+        }
     
         setTimeout(() => {
             this.close();
-            setTimeout(() => {
-                location.reload(); 
-            }, 300);
         }, 3000);
     }
     
     showError(message) {
+        if (!this.popup) return;
+        
         const existingError = this.popup.querySelector('.form-error');
         if (existingError) {
             existingError.remove();
@@ -397,7 +387,7 @@ class PopupManager {
         `;
         document.head.appendChild(style);
         
-        this.form.insertBefore(errorEl, this.form.firstChild);
+        this.form?.insertBefore(errorEl, this.form.firstChild);
         
         setTimeout(() => {
             errorEl.remove();
@@ -408,7 +398,6 @@ class PopupManager {
 document.addEventListener('DOMContentLoaded', () => {
     new PopupManager();
 });
-
 
 /*Вопросы*/
 
@@ -714,5 +703,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (instance?.refresh) instance.refresh();
             });
         }, 250);
+    });
+});
+
+// Свайпер для видео
+document.addEventListener('DOMContentLoaded', function() {
+    const videosSwiper = new Swiper('.videos-swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        grabCursor: true,
+        touchRatio: 1,
+
+        breakpoints: {
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 1.5,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+        },
+        
+        observer: true,
+        observeParents: true,
+    });
+    
+    document.querySelectorAll('.play-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            console.log('▶️ Воспроизведение видео');
+            alert('🎬 Открытие видео плеера');
+        });
     });
 });
