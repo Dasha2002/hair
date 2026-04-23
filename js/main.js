@@ -38,28 +38,94 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const burgerBtn = document.getElementById('burger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-nav a, .mobile-social-link, .btn-mobile-full');
+    const mobileLinks = mobileMenu?.querySelectorAll('a[href^="#"]') || [];
+    
+    let scrollPosition = 0;
+    let targetHash = null;
+    
+    function openMenu() {
+        scrollPosition = window.scrollY;
+        document.body.classList.add('menu-open');
+        document.body.style.top = `-${scrollPosition}px`;
+        if (mobileMenu) {
+            mobileMenu.classList.add('active');
+            mobileMenu.scrollTop = 0;
+        }
+        if (burgerBtn) {
+            burgerBtn.classList.add('active');
+            burgerBtn.setAttribute('aria-expanded', 'true');
+        }
+    }
+    
+    function closeMenu(scrollToHash = null) {
+        document.body.classList.remove('menu-open');
+        document.body.style.top = '';
+        window.scrollTo(0, scrollPosition);
+        if (mobileMenu) {
+            mobileMenu.classList.remove('active');
+        }
+        if (burgerBtn) {
+            burgerBtn.classList.remove('active');
+            burgerBtn.setAttribute('aria-expanded', 'false');
+        }
+    
+        if (scrollToHash) {
+            setTimeout(() => {
+                const target = document.querySelector(scrollToHash);
+                if (target) {
+                    const headerOffset = 70;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 300); 
+        }
+    }
 
-    // Открытие/закрытие меню по клику на бургер
-    if (burgerBtn && mobileMenu) {
-        burgerBtn.addEventListener('click', () => {
-            burgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            // Блокируем скролл страницы, когда меню открыто
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Закрытие меню при клике на ссылку внутри него
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                burgerBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+    if (burgerBtn) {
+        burgerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (mobileMenu?.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
     }
-});
 
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            const hash = link.getAttribute('href');
+            closeMenu(hash);
+        });
+    });
+    const mobileButtons = mobileMenu?.querySelectorAll('button') || [];
+    mobileButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            closeMenu();
+        });
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) {
+            e.preventDefault();
+            closeMenu();
+            if (burgerBtn) burgerBtn.focus();
+        }
+    });
+    document.addEventListener('touchmove', (e) => {
+        if (document.body.classList.contains('menu-open')) {
+            if (!e.target.closest('#mobile-menu')) {
+                e.preventDefault();
+            }
+        }
+    }, { passive: false });
+});
 
 //Карусель результат работы
 document.addEventListener('DOMContentLoaded', function() {
@@ -206,6 +272,8 @@ class PopupManager {
         this.phoneInput = document.getElementById('popupPhone');
         this.nameInput = document.getElementById('popupName');
         
+        this.scrollPosition = 0;
+        
         if (this.popup) this.init();
     }
     
@@ -239,8 +307,14 @@ class PopupManager {
     }
     
     open() {
-        this.popup.classList.add('active');
+        this.scrollPosition = window.scrollY || window.pageYOffset;
         document.body.classList.add('popup-open');
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+        this.popup.classList.add('active');
         
         setTimeout(() => {
             this.nameInput?.focus();
@@ -251,41 +325,37 @@ class PopupManager {
     }
     
     close() {
-        this.popup.classList.remove('active');
         document.body.classList.remove('popup-open');
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        this.popup.classList.remove('active');
+        window.scrollTo(0, this.scrollPosition);
     }
-    
+
     initPhoneMask() {
         if (!this.phoneInput) return;
-        
         const phoneInput = this.phoneInput;
         
         phoneInput.addEventListener('input', (e) => {
             let value = e.target.value.replace(/\D/g, '');
-            
-            if (value.length > 10) {
-                value = value.slice(0, 10);
-            }
+            if (value.length > 10) value = value.slice(0, 10);
             
             let formattedValue = '';
-            
             if (value.length > 0) {
-                formattedValue = '(';
-                formattedValue += value.substring(0, 3);
+                formattedValue = '(' + value.substring(0, 3);
             }
             if (value.length >= 3) {
-                formattedValue += ') ';
-                formattedValue += value.substring(3, 6);
+                formattedValue += ') ' + value.substring(3, 6);
             }
             if (value.length >= 6) {
-                formattedValue += '-';
-                formattedValue += value.substring(6, 8);
+                formattedValue += '-' + value.substring(6, 8);
             }
             if (value.length >= 8) {
-                formattedValue += '-';
-                formattedValue += value.substring(8, 10);
+                formattedValue += '-' + value.substring(8, 10);
             }
-            
             e.target.value = formattedValue;
         });
         
@@ -295,7 +365,6 @@ class PopupManager {
                 (e.keyCode >= 35 && e.keyCode <= 40)) {
                 return;
             }
-    
             if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && 
                 (e.keyCode < 96 || e.keyCode > 105)) {
                 e.preventDefault();
@@ -305,7 +374,6 @@ class PopupManager {
     
     async handleSubmit(e) {
         e.preventDefault();
-        
         const name = this.nameInput?.value.trim();
         const phone = this.phoneInput?.value.trim();
         
@@ -313,7 +381,6 @@ class PopupManager {
             this.showError('Пожалуйста, заполните все поля');
             return;
         }
-        
         if (phone.replace(/\D/g, '').length < 10) {
             this.showError('Пожалуйста, введите корректный номер телефона');
             return;
@@ -330,7 +397,6 @@ class PopupManager {
             await new Promise(resolve => setTimeout(resolve, 1000));
             this.showSuccess();
             console.log('Form submitted:', { name, phone });
-            
         } catch (error) {
             console.error('Error:', error);
             this.showError('Произошла ошибка. Попробуйте позже.');
@@ -347,23 +413,16 @@ class PopupManager {
                 <p>Наш специалист свяжется с вами в течение 15 минут</p>
             </div>
         `;
-        
         if (this.form) {
             this.form.outerHTML = successHTML;
         }
-    
-        setTimeout(() => {
-            this.close();
-        }, 3000);
+        setTimeout(() => { this.close(); }, 3000);
     }
     
     showError(message) {
         if (!this.popup) return;
-        
         const existingError = this.popup.querySelector('.form-error');
-        if (existingError) {
-            existingError.remove();
-        }
+        if (existingError) existingError.remove();
         
         const errorEl = document.createElement('div');
         errorEl.className = 'form-error';
@@ -386,12 +445,8 @@ class PopupManager {
             }
         `;
         document.head.appendChild(style);
-        
         this.form?.insertBefore(errorEl, this.form.firstChild);
-        
-        setTimeout(() => {
-            errorEl.remove();
-        }, 3000);
+        setTimeout(() => { errorEl.remove(); }, 3000);
     }
 }
 

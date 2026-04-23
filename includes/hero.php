@@ -19,8 +19,8 @@
             <p class="hero-subtitle">Современные турецкие методики</p>
             
             <div class="hero-buttons">
-                <a href="#rec1053492266" class="btn btn-gold">РАССЧИТАТЬ СТОИМОСТЬ</a>
-                <a href="#rec1053177561" class="btn btn-outline">РЕЗУЛЬТАТЫ КЛИЕНТОВ</a>
+                <a href="#calculator" class="btn btn-gold">РАССЧИТАТЬ СТОИМОСТЬ</a>
+                <a href="#results" class="btn btn-outline">РЕЗУЛЬТАТЫ КЛИЕНТОВ</a>
             </div>
             
             <div class="benefits-bar">
