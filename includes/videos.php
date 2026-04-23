@@ -2,9 +2,9 @@
 
 <section class="videos-section">
     <div class="container-video">
-        <h2 class="video-title">Видео от наших клиентов</h2>
+        <h2 class="video-title" data-animate="fade-left">Видео от наших клиентов</h2>
         
-        <div class="videos-grid desktop-version">
+        <div class="videos-grid desktop-version" data-animate="fade-up">
             <div class="video-card">
                 <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=500&auto=format&fit=crop" alt="Видео 1" loading="lazy">
                 <button class="play-btn" aria-label="Воспроизвести">
@@ -124,7 +124,7 @@
         </div>
         
         <div class="block-inf-video">
-            <h3>Обратившись к нам, Вы гарантированно получите качественные услуги</h3>
+            <h3 data-animate="fade-up">Обратившись к нам, Вы гарантированно получите качественные услуги</h3>
             <a href="#calculator" class="btn btn-dark btn-video-inf">РАССЧИТАТЬ СТОИМОСТЬ</a>
         </div>
     </div>

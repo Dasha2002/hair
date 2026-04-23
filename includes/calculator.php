@@ -1,7 +1,7 @@
 <section class="quiz-section" id="calculator">
     <div class="container-calculator">
-        <h2 class="calculator-heading">Рассчитаем стоимость за 15 минут</h2>
-        <p class="subtitle">Пройдите небольшой опрос и получите скидку 5%<br> на услуги клиники</p>
+        <h2 class="calculator-heading" data-animate="fade-up">Рассчитаем стоимость за 15 минут</h2>
+        <p class="subtitle" data-animate="fade-up">Пройдите небольшой опрос и получите скидку 5%<br> на услуги клиники</p>
         <div class="quiz-wrapper">
             <div class="quiz-header">
                 <h2 class="quiz-title">Узнайте стоимость пересадки</h2>

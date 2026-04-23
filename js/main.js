@@ -741,3 +741,82 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// анимации 
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const config = {
+        threshold: 0.12,              
+        rootMargin: '0px 0px -80px 0px', 
+        animateOnce: true,            
+        preloadVisible: true         
+    };
+
+    const animatedElements = new Set();
+
+    function activateAnimation(element) {
+        if (config.animateOnce && animatedElements.has(element)) return;
+        
+        setTimeout(() => {
+            element.classList.add('is-visible');
+        }, 50);
+        
+        animatedElements.add(element);
+    }
+
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                activateAnimation(entry.target);
+                if (config.animateOnce) {
+                    scrollObserver.unobserve(entry.target);
+                }
+            }
+        });
+    }, {
+        threshold: config.threshold,
+        rootMargin: config.rootMargin
+    });
+
+    function initAnimations() {
+        const elements = document.querySelectorAll('[data-animate]');
+        
+        elements.forEach(element => {
+            if (config.preloadVisible) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
+                    element.classList.add('is-loaded');
+                    element.classList.add('is-visible');
+                    return;
+                }
+            }
+            scrollObserver.observe(element);
+        });
+    }
+
+    initAnimations();
+    
+    window.addEventListener('load', () => {
+        setTimeout(initAnimations, 300);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});

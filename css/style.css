@@ -29,6 +29,232 @@ body {
     overflow-x: hidden;
 }
 
+
+[data-animate] {
+    opacity: 0;
+    will-change: opacity, transform;
+    animation-fill-mode: forwards;
+    animation-play-state: paused; 
+}
+
+@keyframes fadeInUpSmooth {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-animate="fade-up"] {
+    animation-name: fadeInUpSmooth;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+@keyframes fadeInLeftSmooth {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+[data-animate="fade-left"] {
+    animation-name: fadeInLeftSmooth;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+@keyframes fadeInRightSmooth {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+[data-animate="fade-right"] {
+    animation-name: fadeInRightSmooth;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes zoomInSmooth {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+[data-animate="zoom-in"] {
+    animation-name: zoomInSmooth;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeInUpTitle {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.section-title[data-animate="fade-up"],
+.hero-title[data-animate],
+.consultation-title[data-animate] {
+    animation-name: fadeInUpTitle;
+    animation-duration: 1.4s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInUpCard {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card[data-animate],
+.video-card[data-animate],
+.review-img[data-animate],
+.step-item[data-animate] {
+    animation-name: fadeInUpCard;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+@keyframes fadeInUpBtn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn[data-animate="fade-up"],
+.form-button[data-animate] {
+    animation-name: fadeInUpBtn;
+    animation-duration: 0.9s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+@keyframes fadeInUpImage {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(1.02);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+img[data-animate="fade-up"],
+.hero-bg[data-animate] {
+    animation-name: fadeInUpImage;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+@keyframes fadeInUpForm {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.consultation-form[data-animate],
+.quiz-wrapper[data-animate] {
+    animation-name: fadeInUpForm;
+    animation-duration: 1.3s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+[data-animate].delay-100 { animation-delay: 0.15s; }
+[data-animate].delay-200 { animation-delay: 0.3s; }
+[data-animate].delay-300 { animation-delay: 0.45s; }
+[data-animate].delay-400 { animation-delay: 0.6s; }
+[data-animate].delay-500 { animation-delay: 0.75s; }
+[data-animate].delay-600 { animation-delay: 0.9s; }
+
+
+[data-animate].is-visible {
+    animation-play-state: running;
+}
+
+[data-animate].is-loaded {
+    opacity: 1;
+    transform: none;
+    animation: none;
+}
+
+
+@media (max-width: 768px) {
+    [data-animate="fade-up"],
+    [data-animate="fade-left"],
+    [data-animate="fade-right"] {
+        animation-duration: 0.9s;
+    }
+    
+    @keyframes fadeInUpSmooth {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
@@ -2756,7 +2982,7 @@ img { max-width: 100%; display: block; }
 }
 
 .btn-video-inf:hover {
-    background-color: #311a09;
+    background-color: #414141;
     transform: translateY(-2px);
 }
 

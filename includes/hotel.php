@@ -9,7 +9,7 @@
                 </div>
             </div>
 
-            <div class="hotel-text">
+            <div class="hotel-text" data-animate="fade-up">
                 <h3>Обеспечиваем<br> проживание в отеле</h3>
                 <p>в качестве подарка для наших клиентов из других городов</p>
             </div>

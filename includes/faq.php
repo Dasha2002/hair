@@ -4,7 +4,7 @@
         
         <div class="faq-list">
             <!-- Question 1 -->
-            <div class="faq-item">
+            <div class="faq-item" data-animate="fade-up">
                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
                     <span class="faq-question-text">Мы делаем пересадку по методу FUE. В чем его особенность?</span>
                     <span class="faq-icon" aria-hidden="true">
@@ -27,7 +27,7 @@
             </div>
 
             <!-- Question 2 -->
-            <div class="faq-item">
+            <div class="faq-item" data-animate="fade-up">
                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
                     <span class="faq-question-text">Как проходит консультация?</span>
                     <span class="faq-icon" aria-hidden="true">
@@ -48,7 +48,7 @@
             </div>
 
             <!-- Question 3 -->
-            <div class="faq-item">
+            <div class="faq-item" data-animate="fade-up">
                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
                     <span class="faq-question-text">Есть ли у Вас рассрочка?</span>
                     <span class="faq-icon" aria-hidden="true">
@@ -66,7 +66,7 @@
             </div>
 
             <!-- Question 4 -->
-            <div class="faq-item">
+            <div class="faq-item" data-animate="fade-up">
                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
                     <span class="faq-question-text">Есть ли гарантия?</span>
                     <span class="faq-icon" aria-hidden="true">
@@ -84,7 +84,7 @@
             </div>
 
             <!-- Question 5 -->
-            <div class="faq-item">
+            <div class="faq-item" data-animate="fade-up">
                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
                     <span class="faq-question-text">С какими зонами Вы работаете?</span>
                     <span class="faq-icon" aria-hidden="true">
@@ -108,7 +108,7 @@
             </div>
 
             <!-- Question 6 -->
-            <div class="faq-item">
+            <div class="faq-item" data-animate="fade-up">
                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
                     <span class="faq-question-text">Что входит в стоимость? Есть ли скрытые платежи?</span>
                     <span class="faq-icon" aria-hidden="true">
@@ -126,7 +126,7 @@
             </div>
 
             <!-- Question 7 -->
-            <div class="faq-item">
+            <div class="faq-item" data-animate="fade-up">
                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
                     <span class="faq-question-text">Сколько длится процедура пересадки волос?</span>
                     <span class="faq-icon" aria-hidden="true">
@@ -144,7 +144,7 @@
             </div>
 
             <!-- Question 8 -->
-            <div class="faq-item">
+            <div class="faq-item" data-animate="fade-up">
                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-8">
                     <span class="faq-question-text">Какой результат можно ожидать?</span>
                     <span class="faq-icon" aria-hidden="true">
@@ -162,7 +162,7 @@
             </div>
 
             <!-- Question 9 -->
-            <div class="faq-item">
+            <div class="faq-item" data-animate="fade-up">
                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-9">
                     <span class="faq-question-text">Вы обучаете трансплантации волос?</span>
                     <span class="faq-icon" aria-hidden="true">
