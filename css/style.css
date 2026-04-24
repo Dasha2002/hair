@@ -980,6 +980,7 @@ body.menu-open {
     
     .benefits-bar {
         width: 100%;
+        gap: 10px;
     }
     
     .yandex-map-btn {
@@ -2616,7 +2617,6 @@ body.menu-open {
     right: 10px;
     width: 24px;
     height: 24px;
-    background: #5b4747; /* Темный фон для галочки */
     color: white; /* Белая галочка */
     border-radius: 50%;
     opacity: 1;
@@ -2682,7 +2682,7 @@ body.menu-open {
 }
 
 .radio-item input:checked + .radio-indicator::after {
-    content: '✓'; /* Галочка вместо точки */
+    content: '✓'; 
     position: absolute;
     top: 50%;
     left: 50%;
@@ -2690,7 +2690,7 @@ body.menu-open {
     width: auto;
     height: auto;
     background: transparent;
-    color: white;
+    color: #311a09;
     border-radius: 0;
     font-size: 12px;
     font-weight: bold;
@@ -2701,7 +2701,7 @@ body.menu-open {
 }
 
 .radio-buttons .radio-item input:checked + .radio-indicator {
-    background: #5b4747;
+    background: none;  
 }
 
 .radio-item span:last-child {
