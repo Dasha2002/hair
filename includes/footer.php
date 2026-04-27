@@ -41,12 +41,12 @@
             <div class="footer-column footer-column-center">
                 <nav class="footer-nav">
                     <a href="https://transhairtour.ru/#rec1053165901" class="footer-nav-link">Преимущества</a>
-                    <a href="https://transhairtour.ru/#rec1053172776" class="footer-nav-link">Услуги</a>
-                    <a href="https://transhairtour.ru/#rec1053177561" class="footer-nav-link">Результаты</a>
-                    <a href="https://transhairtour.ru/#rec1053294171" class="footer-nav-link">Этапы</a>
+                    <a href="services.php" class="footer-nav-link">Услуги</a>
+                    <a href="results-page.php" class="footer-nav-link">Результаты</a>
+                    <a href="steps-page.php" class="footer-nav-link">Этапы</a>
                     <a href="https://transhairtour.ru/#rec1053303206" class="footer-nav-link">Команда</a>
-                    <a href="https://transhairtour.ru/#rec1053314471" class="footer-nav-link">Отзывы</a>
-                    <a href="https://transhairtour.ru/#rec1053628116" class="footer-nav-link">Ответы на вопросы</a>
+                    <a href="reviews-page.php" class="footer-nav-link">Отзывы</a>
+                    <a href="faq-page.php" class="footer-nav-link">Ответы на вопросы</a>
                 </nav>
             </div>
 

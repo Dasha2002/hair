@@ -7,11 +7,11 @@
         </div>
 
         <nav class="nav-links">
-            <a href="#services">Услуги</a>
-            <a href="#results">Результаты</a>
-            <a href="#steps">Этапы</a>
+            <a href="services.php">Услуги</a>
+            <a href="results-page.php">Результаты</a>
+            <a href="steps-page.php">Этапы</a>
             <a href="#team">Команда</a>
-            <a href="#reviews">Отзывы</a>
+            <a href="reviews-page.php">Отзывы</a>
         </nav>
 
         <div class="header-actions">
@@ -39,11 +39,11 @@
         </div>
 
         <nav class="mobile-nav">
-            <a href="#services">Услуги</a>
-            <a href="#results">Результаты</a>
-            <a href="#steps">Этапы</a>
+            <a href="services.php">Услуги</a>
+            <a href="results-page.php">Результаты</a>
+            <a href="steps-page.php">Этапы</a>
             <a href="#team">Команда</a>
-            <a href="#reviews">Отзывы</a>
+            <a href="reviews-page.php">Отзывы</a>
         </nav>
         
         <button class="btn btn-gold btn-mobile-full btn-popap">ОНЛАЙН-КОНСУЛЬТАЦИЯ</button>
