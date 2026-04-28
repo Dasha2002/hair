@@ -7,7 +7,7 @@
         </div>
 
         <nav class="nav-links">
-            <a href="services.php">Услуги</a>
+            <a href="services-page.php">Услуги</a>
             <a href="results-page.php">Результаты</a>
             <a href="steps-page.php">Этапы</a>
             <a href="#team">Команда</a>
@@ -39,7 +39,7 @@
         </div>
 
         <nav class="mobile-nav">
-            <a href="services.php">Услуги</a>
+            <a href="services-page.php">Услуги</a>
             <a href="results-page.php">Результаты</a>
             <a href="steps-page.php">Этапы</a>
             <a href="#team">Команда</a>

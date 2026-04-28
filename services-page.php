@@ -25,14 +25,7 @@
 
     <?php include __DIR__ . '/includes/header.php'; ?>
     <?php include __DIR__ . '/includes/popap.php'; ?>
-    <?php include __DIR__ . '/includes/service-hero.php'; ?>
-    <?php include __DIR__ . '/includes/inf-services.php'; ?>
-    <?php include __DIR__ . '/includes/zones-section.php'; ?>
-    <?php include __DIR__ . '/includes/procedure-steps.php'; ?>
-    
-    <?php include __DIR__ . '/includes/results.php'; ?>
-    <?php include __DIR__ . '/includes/faq.php'; ?>
-    <?php include __DIR__ . '/includes/contacts-service.php'; ?>
+    <?php include __DIR__ . '/includes/services.php'; ?>
     <?php include __DIR__ . '/includes/cta.php'; ?>
     <?php include __DIR__ . '/includes/footer.php'; ?>
 

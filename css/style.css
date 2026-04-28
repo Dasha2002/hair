@@ -3751,7 +3751,9 @@ body.menu-open {
     padding: 40px 20px;
     overflow-y: auto;
     box-sizing: border-box;
-    background: rgba(241, 231, 212, 0.5); 
+    
+    /* 🔥 ОДИН СЛОЙ ФОНА (убрали дублирование) */
+    background: rgba(241, 231, 212, 0.11);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -3769,7 +3771,7 @@ body.menu-open {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.05); 
+    background: transparent; 
     z-index: 1;
     pointer-events: none;
 }
