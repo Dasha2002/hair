@@ -19,16 +19,19 @@
                 <span class="social-link-text">Задайте<br> вопрос онлайн</span>
                 <img src="https://static.tildacdn.com/tild3130-3165-4161-b566-613463636238/svg.svg" alt="Telegram"> 
             </a>
-            <button class="btn btn-gold btn-popap">ОНЛАЙН-КОНСУЛЬТАЦИЯ</button>
+            <button class="btn btn-header btn-gold btn-popap">ОНЛАЙН-КОНСУЛЬТАЦИЯ</button>
         </div>
         
-        <a href="tel:+79181088778" class="header-phone">+7 (918) 108-87-78</a>
-        
-        <button class="burger-btn" id="burger-btn" aria-label="Открыть меню">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div class="mobile-header-right">
+            <a href="tel:+79181088778" class="header-phone">+7 (918) 108-87-78</a>
+            
+            <button class="burger-btn" id="burger-btn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
     </div>
 
     <div class="mobile-menu" id="mobile-menu">
